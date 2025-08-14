@@ -128,90 +128,597 @@
 %----------------------------------------------------------------------------------------
 \begin{document}
 
-% non-numbered pages
-\pagestyle{empty} 
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% -*- coding: UTF-8; -*-
+% vim: set fenc=utf-8
 
-%----------------------------------------------------------------------------------------
-%	TITLE
-%----------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SIMPLE-RESUME-CV
+%% <https://github.com/zachscrivena/simple-resume-cv>
+%% This is free and unencumbered software released into the
+%% public domain; see <http://unlicense.org> for details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
+% See "README.md" for instructions on compiling this document.
 
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Cathy Fang} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
-\end{tabularx}
+\documentclass[letterpaper,MMMyyyy,nonstopmode]{simpleresumecv}
+% Class options:
+% a4paper, letterpaper, nonstopmode, draftmode
+% MMMyyyy, ddMMMyyyy, MMMMyyyy, ddMMMMyyyy, yyyyMMdd, yyyyMM, yyyy
 
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREAMBLE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV can also be automatically complied and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+% CV Info (to be customized).
+\newcommand{\CVAuthor}{Cathy Kaile Fang}
+\newcommand{\CVTitle}{Cathy Fang_CV_2025}
+\newcommand{\CVNote}{CV compiled on {\today}}
+%\newcommand{\CVWebpage}{http://www.example.com/~johndoe}
 
-%Experience
-\section{Work Experience}
+% PDF settings and properties.
+\hypersetup{
+pdftitle={\CVTitle},
+pdfauthor={\CVAuthor},
+pdfsubject={\CVWebpage},
+pdfcreator={XeLaTeX},
+pdfproducer={},
+pdfkeywords={},
+unicode=true,
+bookmarks=true,
+bookmarksopen=true,
+pdfstartview=FitH,
+pdfpagelayout=OneColumn,
+pdfpagemode=UseOutlines,
+hidelinks,
+breaklinks}
 
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
+% Shorthand.
+\newcommand{\Code}[1]{\mbox{\textbf{#1}}}
+\newcommand{\CodeCommand}[1]{\mbox{\textbf{\textbackslash{#1}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACTUAL DOCUMENT.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%
+% TITLE BLOCK %
+%%%%%%%%%%%%%%%
+
+\Title{\CVAuthor}
+
+\begin{SubTitle}
+%\href{https://www.google.com/maps/place/17+Prime+Avenue,+Springfield,+Pennsylvania+10111,+USA}
+{Apt 4, 50 Rue de L'Église, Verdun, QC, Canada}
+\par
+\href{kaile.fang@mail.mcgill.ca}
+{kaile.fang@mail.mcgill.ca}
+\,\SubBulletSymbol\,
++1\,(902)\,541-0219
+\,\SubBulletSymbol\,
+\href{www.linkedin.com/in/kaile-fang-28a7a226b}
+{www.linkedin.com/in/kaile-fang-28a7a226b}
+%\href{\CVWebpage}
+%{\url{\CVWebpage}}
+\end{SubTitle}
+
+\begin{Body}
+
+%%%%%%%%%%%%%%%
+%% EDUCATION %%
+%%%%%%%%%%%%%%%
+
+\Section
+{Education}
+{Education}
+{PDF:Education}
+
+\Entry
+{\textbf{McGill University}},
+Montreal, QC, Canada
+
+\Gap
+
+B.A. in Psychology, minor in statistics and behavioral sciences
+\hfill
+\DatestampYMD{2022}{08} ---
+\DatestampYMD{2025}{12}
+
+\SubBulletItem
+Thesis:
+Functional (Dys)connectivity and Cognition in Early Psychosis.
+\SubBulletItem
+\href{https://www.mcgill.ca/psychiatry/katie-lavigne}
+{Supervisor:
+Dr. Katie Lavigne}
+\SubBulletItem
+Focus:
+Cognition, early psychosis, neuroimaging, multivariate distance matrix regression.
 
 
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-\end{joblong}
-  
-%Projects
-\section{Projects}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% RESEARCH EXPERIENCE %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
-\end{tabularx}
+\Section
+{Work Experience}
+{Work Experience}
+{PDF:WorkExperience}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
-\section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
+\Entry
+\href{https://douglas.research.mcgill.ca/open-science-douglas/}
+{\textbf{Douglas Research Centre}}, Verdun, QC, Canada
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
 
-2022 & Class 12th Some Board \hfill  (Grades) \\
+\BulletItem
+Cerebral Imaging Centre (CIC) Seminar Facilitator
+\hfill
+\DatestampYMD{2024}{12} -- Present
 
-2021 & Class 10th Some Board \hfill  (Grades) \\
-\end{tabularx}
+Supervisor: Dr. Mallar Chakravarty (Director of CIC)
+\begin{Detail}
+\SubBulletItem
+Speaker invite, arrange and host in person seminars, student lunches and meetings.
+\SubBulletItem
+Graphics design on Canva. 
+\SubBulletItem
+Video editing and YouTube uploads. 
+\end{Detail}
 
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
+\Gap
+\BulletItem
+Open Science Intern
+\hfill
+\DatestampYMD{2024}{05} -- \DatestampYMD{2025}{09}
 
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
-\end{tabularx}
 
-\vfill
-\center{\footnotesize Last updated: \today}
+
+Team:
+Dr. Katie Lavigne (OS program lead) and
+Dr. Isabel Bacellar (OS program coordinator)
+\begin{Detail}
+\SubBulletItem
+Scholarly and Societal Impact of Open Science Practices: A Narrative Review.
+\SubBulletItem
+Open psychological measures.
+\SubBulletItem
+Resources and practical guides on Open Science practices for the Douglas website.
+\SubBulletItem
+Search funding opportunities and write funding applications.
+\SubBulletItem
+Identify Open Access articles of affiliated researchers.
+\end{Detail}
+
+\BigGap
+\Entry
+\textbf{Private English Tutor}
+\hfill
+\DatestampYMD{2023}{07} -- 
+\DatestampYMD{2023}{03}
+
+\Section
+{Research}
+{Research}
+{PDF:Research}
+
+{\textbf{Miocevic Lab (Dr. Milica Miocevic)}, McGill University}
+\Gap
+\BulletItem
+PSYC 385, one semester research course
+\hfill
+\DatestampYMD{2025}{05} -- Present
+\begin{Detail}
+Develop a Shiny App in R for calculating empirical power of single case experimental design and a tutorial paper.
+\end{Detail}
+
+\BigGap
+\href{https://www.crispdouglas.ca}
+{\textbf{Lavigne Lab (Dr. Katie Lavigne)}, CRISP research group, Douglas Research Centre}
+\Gap
+\BulletItem
+PSYC 484 D1/D2, one-year thesis project 
+\hfill
+\DatestampYMD{2024}{09} -- Present
+
+\BulletItem
+PSYC 499, reading project 
+\hfill
+\DatestampYMD{2024}{09} -- 
+\DatestampYMD{2024}{12}
+
+\begin{Detail}
+Pre-registered narrative review on the impact of open science practices.
+\end{Detail}
+\BigGap
+\textbf{OpenTransfer group}, FORRT (Framework for Open and Reproducible Research Training) and COSN (Chinese Open Science Network)
+
+Translator
+\hfill
+\DatestampYMD{2024}{07} -- Present
+
+\begin{Detail}
+Translate FORRT Glossary of Open Science Terms into proficient Chinese. 
+\SubBulletItem
+Test and run 'AutoTrans' program.
+\SubBulletItem
+Compile translation results.
+\SubBulletItem
+Manual polishing and editing of results.
+\end{Detail}
+
+\BigGap
+\textbf{Sladek Lab (Dr. Robert Sladek)}, Human Genetics, McGill University
+
+Project assistant
+\hfill
+\DatestampYMD{2024}{04} -- 
+\DatestampYMD{2024}{09}
+
+\begin{Detail}
+RNA Denervation project with Jeffrey Yu, M.sc. Student
+\SubBulletItem
+Exploratory and correlational analyses of genetic data in R. 
+\SubBulletItem
+Differential correlation analysis using discordant package. 
+\end{Detail}
+
+\BigGap
+\textbf{MOGILab (Dr. Jeffrey Mogil)}, Department of Psychology, McGill University
+
+Volunteer
+\hfill
+\DatestampYMD{2022}{12} -- Present
+
+\BulletItem
+“Pain + Opioid Withdrawal in Mice”, Hannah Derue, Ph.D. Candidate
+\hfill
+\DatestampYMD{2023}{08} -- Present
+
+\begin{Detail}
+\SubBulletItem
+Algorithm training of DeepLabCut for labelling mouse body parts and automatic behavioural scoring of open field and tail suspension tests.
+\SubBulletItem
+Behavioral testing (operant boxes). 
+\SubBulletItem
+Data logging and analysis. 
+\end{Detail}
+\BulletItem
+“Pain/Sick”, Laila Chaudry, Ph.D. candidate  
+\hfill
+\DatestampYMD{2023}{01} -- \DatestampYMD{2023}{06}
+
+\begin{Detail}
+\SubBulletItem
+Human data collection, data logging and management. 
+\SubBulletItem
+SONA participant pool (research study participation sign-up platform) setup. 
+\end{Detail}
+
+
+\Section
+{Public Engagement}
+{Public Engagement}
+{PDF:PublicEngagement}
+\textbf{Tanenbaum Open Science Institute (TOSI)} Tainee Council, Montreal Neurological Institute (MNI), QC
+
+\BulletItem
+Journal Club Project Coordinator 
+\hfill
+\DatestampYMD{2023}{06} -- Present
+\begin{Detail}
+Organzie and host monthly OS/ReproducibiliTea journal club meetings.
+\end{Detail}
+\Gap
+\BulletItem
+Communications Director
+\hfill
+\DatestampYMD{2022}{10} -- 
+\DatestampYMD{2023}{06}
+
+\begin{Detail}
+Event planning and outreach. 
+\end{Detail}
+
+\BigGap
+\textbf{Douglas Open Science Trainee Council} 
+\hfill
+\DatestampYMD{2024}{07} -- Present
+
+Monthly Douglas OS training series. 
+\begin{Detail}
+\BulletItem
+Promote OS in the Douglas undergraduate community. 
+\BulletItem
+Speaker introduction, Zoom monitoring and lead Q+A sessions.
+\end{Detail}
+%%%%%%%%%%%%%%%%%%
+%% PUBLICATIONS %%
+%%%%%%%%%%%%%%%%%%
+
+\Section
+{Publications}
+{Publications}
+{PDF:Publications}
+
+\SubSection
+{In Progress}
+{In Progress}
+{PDF:InProgress}
+
+% Declare a new group to limit the scope of \MaxNumberedItem to this subsection.
+\begingroup
+\renewcommand{\MaxNumberedItem}{[88]}
+
+\Gap
+\NumberedItem{[1]}
+\href{https://doi.org/10.17605/OSF.IO/QPZF5}
+{\underline{Fang, C.}, Bacellar, I., Lavgine, KM.
+``Impact of Open Science Practices: A Narrative Review'', pre-registered on OSF.
+}
+\endgroup
+
+\BigGap
+\Section
+{Presentations}
+{Presentations}
+{PDF:Presentations}
+\begingroup
+\renewcommand{\MaxNumberedItem}{[88]}
+\SubSection
+{Talks}
+{Talks}
+{PDF:Talks}
+\Gap
+\NumberedItem{[1]}
+\href{https://scientistamcgill.wordpress.com/3-mt-presentations-2024/}
+{Fang, C., Danyluik, M., Lavgine, KM.
+\textit{Stay Connected: Insights into Cognitive Impairments in Early Psychosis} - 3MT 
+at Scientista 3rd Annual Symposium: Science for Hope. \textbf{Runner up prize}.
+\DatestampYM{2025}{03}.}
+
+\Gap
+\NumberedItem{[2]}
+\href{https://www.cogsurf.org}
+{Fang, C., Bacellar, I., Lavgine, KM.
+\textit{Impact of Open Science Practices: A Narrative Review} - 3MT 
+at CogSurf (Cognitive Science
+Undergraduate Research Forum).
+\DatestampYM{2025}{02}.}
+
+\Gap
+\NumberedItem{[3]}
+{Fang, C., Bacellar, I., Lavgine, KM.
+\textit{Impact of Open Science Practices: A Narrative Review}
+at ReproducibiliTea Journal Club of Western Institute for Neuroscience. 
+\DatestampYM{2025}{02}. [invited]}
+
+\Gap
+\NumberedItem{[4]}
+{Fang, C., Bacellar, I., Lavgine, KM.
+\textit{Impact of Open Science Practices: A Narrative Review}
+in TOSI OS Journal Club.
+\DatestampYM{2024}{11}.}
+
+\SubSection
+{Poster}
+{Poster}
+{PDF:Poster}
+\Gap
+\NumberedItem{[1]}
+{Fang, C., Danyluik, M., Lavgine, KM.
+\textit{Understanding Cognitive Impairment in Early Psychosis through Functional Brain Dysconnectivity: A Whole-Brain Analysis Approach} at Healthy Brains Healthy Lives Symposium 2025.
+\DatestampYM{2025}{05}.}
+
+\NumberedItem{[2]}
+{Fang, C., Danyluik, M., Lavgine, KM.
+\textit{Understanding Cognitive Impairment in Early Psychosis through Functional Brain Dysconnectivity: A Whole-Brain Analysis Approach} at Neuropsychology Day 2025.
+\DatestampYM{2025}{02}.}
+
+\NumberedItem{[2]}
+{Fang, C., Danyluik, M., Lavgine, KM.
+\textit{Understanding Cognitive Impairment in Early Psychosis through Functional Brain Dysconnectivity: A Whole-Brain Analysis Approach} at Undergraduate Science Showcase, McGill University.
+\DatestampYM{2025}{03}.}
+
+\NumberedItem{[3]}
+{Fang, C., Bacellar, I., Lavgine, KM.
+\textit{Impact of Open Science Practices: A Narrative Review} at the TOSI Open Science Research Fair.
+\DatestampYM{2025}{02}.}
+
+\Gap
+\NumberedItem{[4]}
+{Fang, C., Bacellar, I., Lavgine, KM.
+\textit{Impact of Open Science Practices: A Narrative Review} at the Open Science in Action Symposium (MNI).
+\DatestampYM{2024}{11}.}
+
+\Gap
+\NumberedItem{[5]}
+{Fang, C., Bacellar, I., Lavgine, KM.
+\textit{Impact of Open Science: A Review}
+at the Undergrad Research Expo (Douglas Research Centre).
+\DatestampYM{2024}{07}.}
+
+\endgroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% AWARDS & SCHOLARSHIPS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section
+{Awards \&\newline
+Scholarships}
+{Awards \& Scholarships}
+{PDF:AwardsAndScholarships}
+
+\href{https://openscienceofficehours.github.io/osoh_website/os-badges/}
+{\textbf{Open Science Badge - Science Communication}}
+\hfill
+\DatestampY{2024}
+\begin{Detail}
+For organizing OS journal clubs and talks on OS.
+\end{Detail}
+
+
+\BigGap
+\textbf{TOSI OS Helpers Program}
+
+\Gap
+\BulletItem
+\href{https://www.mcgill.ca/neuro/jerome-fortin-phd}
+{Barnett Lab (Dr. Alex Barnett)} at MNI
+\hfill
+\DatestampYMD{2025}{05} -- 
+\DatestampYMD{2025}{07}
+
+\begin{Detail}
+\SubBulletItem
+Create a Data Management Plan; Introduction to ORCiD, GitHub and McGill e-scholarship.
+\end{Detail}
+
+\BulletItem
+\href{https://www.mcgill.ca/neuro/jerome-fortin-phd}
+{Fortin Lab (Dr. Jerome Fortin)} at MNI
+\hfill
+\DatestampYMD{2025}{05} -- 
+\DatestampYMD{2025}{07}
+
+\begin{Detail}
+\SubBulletItem
+Create a Data Management Plan
+\end{Detail}
+
+\BulletItem
+\href{https://sites.google.com/view/ruthazerlab/home}
+{Ruthazer Lab (Dr. Edward Ruthazer)} at MNI
+\hfill
+\DatestampYMD{2024}{09} -- 
+\DatestampYMD{2024}{11}
+
+\begin{Detail}
+\SubBulletItem
+Create a Data Management Plan for an NIH grant application.
+\SubBulletItem
+Deposit articles to McGill e-scholarship as a means of self-archiving.
+\SubBulletItem
+Introduce ORCID (a persistent identifier for researchers) and open access.
+\end{Detail}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% CAMPUS ACTIVITIES %%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section
+{Other}
+{Other}
+{PDF:Other}
+\Entry
+{\textbf{McGill Science Computer Task Force}}
+
+Member
+\hfill
+\DatestampYMD{2024}{09} -- Present
+
+\begin{Detail}
+Hardware lending, printing services and general guidance on services offered.
+\end{Detail}
+
+
+\BigGap
+\Entry
+{\textbf{McGill Psychology Student Association}}
+
+Mentor
+\hfill
+\DatestampYMD{2023}{09} -- Present
+\begin{Detail}
+Guide students on topics such as finding a research position, course selection and career paths.
+\end{Detail}
+
+\BigGap
+\Entry
+{\textbf{McGill International Students Network}}
+
+Mentor, International Buddy Program
+\hfill
+\DatestampYMD{2023}{08} -- Present
+\begin{Detail}
+Guide students on living in McGill residence, life in Montreal and others.
+\end{Detail}
+
+\BigGap
+\Entry
+\href{https://www.toastmasters.org/}
+{\textbf{Toastmasters International}}
+
+Member, Datang Advanced Toastmasters Club
+\hfill
+\DatestampYMD{2023}{07} -- \DatestampYMD{2023}{09}
+
+\begin{Detail}
+Given 3 speeches and organized 1 table-topic session.
+\end{Detail}
+
+\BigGap
+{\textbf{Anhui Provincial Hospital}}, Outpatient Unit, Psychiatric Department, Anhui, China
+
+Volunteer/ Intern 
+\hfill
+Summer \DatestampY{2023}
+
+\begin{Detail}
+Involved in diagnostic assessments of, and pharmaceutical interventions for various mental, psychiatric, and neurological disorders in outpatient clinics with multiple medical professionals. 
+\end{Detail}
+
+\BigGap
+\Entry
+{\textbf{McGill Student Chinese Brush Arts Club}}
+
+Vice President of Arts
+\hfill
+\DatestampYMD{2022}{09} -- Present
+
+\begin{Detail}
+\SubBulletItem
+Teach Chinese calligraphy at weekly sessions.
+\SubBulletItem
+Represent the team and demonstrate calligraphy at various events.
+\end{Detail}
+
+%%%%%%%%%%%%%%%
+%% LANGUAGES %%
+%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%
+%% SKILLS %%
+%%%%%%%%%%%%
+
+\Section{Skills}
+{Skills}
+{PDF:Skills}
+
+\Entry
+{\textbf{Technical Skills}}
+
+R, Python (beginner), {\LaTeX}, Microsoft CoPilot, Canva, Youtube.
+
+\Gap
+
+\Entry
+{\textbf{Languages}}
+
+English (fluent), Mandarin Chinese (native), French (intermediate; reading, speaking, writing).
+
+\Section{Advanced Courses}
+{Advanced Courses}
+{PDF:Courses}
+\Entry
+Non-Parametric Statistics (MATH 524), Structural Equation Models (PSYC 531).
+
+\end{Body}
 
 \end{document}
